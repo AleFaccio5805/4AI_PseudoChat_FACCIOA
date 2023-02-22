@@ -1,4 +1,7 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+
+$obj = new stdClass();
 
 $utenti = '
     [
@@ -11,8 +14,16 @@ $utenti = '
     ]
 ';
 
+/*$arrayUtenti = json_decode($utenti);
+
+$obj->utenti = $arrayUtenti;*/
+
+
+
+
+
     //RITORNARE I DATI di tutti gli utenti o di un utente richiesto
      //mediante un oggetto JSON con campo cod, desc e utenti o utente (se si vuole il massimo del punteggio)
      //NOTA: cod (0= ok, -1=errore), desc (eventuale testo da mostrare all'utente) e utente o utenti (dati di un utente o array degli utenti)
-    echo $utenti;
+echo $utenti;
 ?>

@@ -1,3 +1,78 @@
+let porta = 80;
+var indirizzoServer = "http://localhost:"+porta+"/FACCIO/Verifica_FACCIO/4AI_PseudoChat_FACCIOA/Server/";
+
+var utenti, messaggi;
+
+
+
+
+$(document).ready(function() {
+    richiediUtenti();
+    
+
+});
+
+
+function richiediUtenti(){
+    let promise1 = fetch(indirizzoServer + "utenti.php", {method:'GET'}); 
+    
+
+    promise1.then(
+        async (risposta)=>{
+            //.json() restituisce una PROMISE gestita dall'await
+            utenti = await risposta.json();
+            console.log(utenti);
+            aggiornaUtenti();
+        }
+    )
+
+}
+
+function aggiornaUtenti(){
+    let lista = document.getElementById("listUtenti");
+    console.log(utenti);
+    for(let i = 0; i < 6; i++){
+        if(i == 0)
+            continue;
+        console.log(i);
+        console.log(utenti[i].nome);
+        let faccia = "";
+        if(utenti[i].nome == "Mario" || utenti[i].nome == "Luigi")
+            faccia = "face";
+        else
+            faccia = "face_3";
+        let utente = `
+        <li onclick="visualizzaMessaggi()">
+            <div class="material-symbols-outlined icone">
+            `+faccia+`
+            </div>
+            ` + utenti[i].nome + `
+        </li>`
+
+        lista.innerHTML += utente;
+    }
+}
+
+function visualizzaMessaggi(){
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
     TESTO DELLA VERIFICA DI TPSIT
     Viene richiesto di modificare i file html, js e php in modo tale da:
@@ -13,7 +88,7 @@
         # modificare il nome e cognome
         # aggiornare l'ora in base all'ora dell'ultimo messaggio inviato dall'utente selezionato
     
-    - aggiornare i messaggio in base all'ora attuale
+    - aggiornare i messaggi in base all'ora attuale
         #NOTA: se un messaggio è stato inviato alle 12:30 e ora sono le 12:15 non deve essere visualizzato
         #Deve essere quindi impostato un timer che ogni minuto controlli l' "arrivo" di nuovi messaggi e aggiorni la sezione più interna
         #Non importa se si utilizza ut1 per l'utente 0 o ut2, l'importante è la coerenza
@@ -27,4 +102,14 @@
     NOTA. Non è possibile fare cache dei dati in array, è possibile salvare i codici nella pagina web, 
             tutto il resto deve essere prelevato dal server
 
+*/
+
+
+/*                
+                <li>
+                    <div class="material-symbols-outlined icone">
+                        face
+                    </div>
+                    Mario R.
+                </li>
 */

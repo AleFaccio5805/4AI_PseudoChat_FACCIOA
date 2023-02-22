@@ -27,7 +27,7 @@
         { "codMit": "0", "codDest": "4",  "mes": "Fra poco vado...", "orainvio": "12:45" },
         { "codMit": "4", "codDest": "0", "mes": "Ma non sei a lezione! &#128545;", "orainvio": "12:45" }, 
         
-        { "codMit": "0", "codDest": "5",  "mes": "Ciao Gigi, oggi a che ora arrivi?", "orainvio": "13:00" },
+        { "codMit": "0", "codDest": "5",  "mes": "Ciao Gigi, oggi a che ora arrivi?", "orainvio": "13:00" }
     ]';
 
     //RITORNARE IN MODO OPPORTUNO SOLO I MESSAGGI DEGLI UTENTI NECESSARI ALL'ORA GIUSTA
