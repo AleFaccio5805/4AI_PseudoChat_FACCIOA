@@ -140,3 +140,8 @@ section>section{
 #divAddMes .icone{
     font-size: 30pt;
 }
+
+.a{
+    visibility:hidden;
+    font-size: 0px;
+}

@@ -42,11 +42,12 @@ function aggiornaUtenti(){
         else
             faccia = "face_3";
         let utente = `
-        <li onclick="visualizzaMessaggi()">
+        <li onclick="visualizzaMessaggi() id ="`+ utenti[i].nome +`">
             <div class="material-symbols-outlined icone">
             `+faccia+`
             </div>
-            ` + utenti[i].nome + `
+            ` + utenti[i].nome + " " + utenti[i].cognome + 
+            `<p class="a" id="codice">` +i + `</p>
         </li>`
 
         lista.innerHTML += utente;
@@ -54,6 +55,28 @@ function aggiornaUtenti(){
 }
 
 function visualizzaMessaggi(){
+    let divNome = document.getElementById("divNome");
+    let codice = document.getElementsByClassName("a");
+    let paylod = {};
+    let promise = fetch(indirizzoServer + "messaggi.php", {
+        method:'POST',
+        headers:{
+            /* TIPO DI DATI INVIATI */
+            'Content-Type':'application/json'
+        },
+        /* CONVERSIONE DA JSON a STRINGA */
+        body:JSON.stringify(paylod)
+    });
+    promise.then(
+        async (risposta)=>{
+            let dati = await risposta.json();
+            console.log(dati);
+            
+        }
+
+    )
+
+
 
 }
 
