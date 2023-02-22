@@ -2,7 +2,7 @@
 
     //Array di messaggi
     //https://www.w3schools.com/charsets/ref_emoji.asp
-      $messaggi = '[
+    $messaggi = '[
         { "codMit": "1", "codDest": "0", "mes": "Ciao, come stai?", "orainvio": "11:20" },
         { "codMit": "0", "codDest": "1",  "mes": "Ciao &#128512;! Tutto bene, tu?", "orainvio": "11:30" },
         { "codMit": "1", "codDest": "0",  "mes": "Più o meno, fra poco ho una verifica &#128532;", "orainvio": "11:32" },

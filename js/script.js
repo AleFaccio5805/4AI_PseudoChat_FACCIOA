@@ -42,7 +42,7 @@ function aggiornaUtenti(){
         else
             faccia = "face_3";
         let utente = `
-        <li onclick="visualizzaMessaggi() id ="`+ utenti[i].nome +`">
+        <li onclick="visualizzaMessaggi()">
             <div class="material-symbols-outlined icone">
             `+faccia+`
             </div>
@@ -71,13 +71,8 @@ function visualizzaMessaggi(){
         async (risposta)=>{
             let dati = await risposta.json();
             console.log(dati);
-            
         }
-
     )
-
-
-
 }
 
 
